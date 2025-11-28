@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>محمد کریمی</title>
+  <style>
+    body {
+      font-family: Tahoma, sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      text-align: center;
+      width: 320px;
+    }
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #0056b3;
+    }
+    .about-text {
+      display: none;
+      margin-top: 10px;
+      text-align: justify;
+      font-size: 14px;
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 8px;
+    }
+    .footer {
+      margin-top: 15px;
+      font-size: 13px;
+    }
+    .footer a {
+      color: #007bff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="https://i.imghippo.com/files/kVOl6512ntw.jpg" alt="Profile" class="profile-img">
+    <h2 id="title">سلام من محمد کریمی هستم</h2>
+
+    <button id="btn-about" class="btn" onclick="toggleAbout()">درباره من</button>
+    <div id="about" class="about-text">
+      من محمد کریمی هستم، علاقه‌مند به طراحی وب و توسعه نرم‌افزار. این سایت نمونه‌ای ساده برای معرفی من است.
+    </div>
+
+    <!-- لینک اینستاگرام -->
+    <button id="btn-instagram" class="btn" onclick="window.open('https://www.instagram.com/mohammadmk.16/#','_blank')">اینستای من</button>
+    
+    <!-- لینک تلگرام -->
+    <button id="btn-telegram" class="btn" onclick="window.open('https://i.imghippo.com/files/kVOl6512ntw.jpg','_blank')">تلگرام من</button>
+    
+    <!-- لینک کمپانی -->
+    <button id="btn-company" class="btn" onclick="window.open('https://mkstudio.ir','_blank')">کمپانی من</button>
+
+    <button id="btn-lang" class="btn" onclick="toggleLang()">فارسی / English</button>
+
+    <div class="footer">
+      ساخته شده توسط <a href="https://mkstudio.ir" target="_blank">mkstudio.ir</a>
+    </div>
+  </div>
+
+  <script>
+    let lang = "fa";
+
+    function toggleAbout() {
+      const about = document.getElementById("about");
+      about.style.display = (about.style.display === "block") ? "none" : "block";
+    }
+
+    function toggleLang() {
+      const title = document.getElementById("title");
+      const btnAbout = document.getElementById("btn-about");
+      const btnInstagram = document.getElementById("btn-instagram");
+      const btnTelegram = document.getElementById("btn-telegram");
+      const btnCompany = document.getElementById("btn-company");
+      const btnLang = document.getElementById("btn-lang");
+      const about = document.getElementById("about");
+
+      if (lang === "fa") {
+        title.innerText = "Hello, I am Mohammad Karimi";
+        btnAbout.innerText = "About Me";
+        btnInstagram.innerText = "My Instagram";
+        btnTelegram.innerText = "My Telegram";
+        btnCompany.innerText = "My Company";
+        btnLang.innerText = "English / فارسی";
+        about.innerText = "I am Mohammad Karimi, passionate about web design and software development. This site is a simple sample to introduce myself.";
+        lang = "en";
+      } else {
+        title.innerText = "سلام من محمد کریمی هستم";
+        btnAbout.innerText = "درباره من";
+        btnInstagram.innerText = "اینستای من";
+        btnTelegram.innerText = "تلگرام من";
+        btnCompany.innerText = "کمپانی من";
+        btnLang.innerText = "فارسی / English";
+        about.innerText = "من محمد کریمی هستم، علاقه‌مند به طراحی وب و توسعه نرم‌افزار. این سایت نمونه‌ای ساده برای معرفی من است.";
+        lang = "fa";
+      }
+    }
+  </script>
+</body>
+</html>
